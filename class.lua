@@ -2,13 +2,11 @@
 -- A simple OOP implement of Lua
 
 local function Construct(cls, inst, ...)
-    if cls then
-        if cls.__base then
-            Construct(cls.__base, inst, ...)
-        end
-        if cls.ctor then
-            cls.ctor(inst, ...)
-        end
+    if cls.__base then
+        Construct(cls.__base, inst, ...)
+    end
+    if cls.ctor then
+        cls.ctor(inst, ...)
     end
 end
 
