@@ -33,7 +33,7 @@ function Stack:Pop()
 end
 
 function Stack:Peek()
-    return self._top > 0 and self._elements[self._top] or nil    
+    return self._top > 0 and self._elements[self._top] or nil
 end
 
 function Stack:Clear()
