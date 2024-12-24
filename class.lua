@@ -1,6 +1,10 @@
 -- oopsLua by ixtWuko
 -- A simple OOP implement of Lua
 
+---@class Class
+---@field new fun(...) : table
+---@field is fun(Class : table) : boolean
+
 local function Construct(cls, inst, ...)
     if cls.__base then
         Construct(cls.__base, inst, ...)
@@ -30,6 +34,9 @@ local function IsInstanceOf(inst, cls)
     return false
 end
 
+---@param name string
+---@param base Class
+---@return Class
 local function class(name, base)
     local cls = { __class = name, __base = base }
     if base then
